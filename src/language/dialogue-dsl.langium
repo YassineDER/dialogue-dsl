@@ -5,13 +5,13 @@ import './dialogue-dsl-abstractsyntax'
 entry DialogRule returns DialogTree:
     '@DIALOGUE' name=STRING ';'
     '@NPC' npc_name=STRING ';'
-    '@LINES' '{' lines+=NpcLineRule+ '}' ';'
+    '@LINES' '{' lines += NpcLineRule+ '}' ';'
     '@CHOICES' '{' choiceDefs+=ChoiceDefinitionRule+ '}' ';'
-    '@INITIAL_LINE' initial_line=[NPC_LINE:ID] ';'
+    '@INITIAL_LINE' initial_line = [NPC_LINE:ID] ';'
 ;
 
 NpcLineRule returns NPC_LINE:
-    id=ID ':' text=STRING ';'
+    name=ID ':' text=STRING ';'
 ;
 
 ChoiceDefinitionRule returns ChoiceDefinition:
@@ -19,7 +19,7 @@ ChoiceDefinitionRule returns ChoiceDefinition:
 ;
 
 ChoiceRule returns Choice:
-    text=STRING '->' next_line=[NPC_LINE:ID]
+    text=STRING '->' next_line=[NPC_LINE:ID] ';'
 ;
 
 

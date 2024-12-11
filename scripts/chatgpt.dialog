@@ -1,0 +1,32 @@
+@DIALOGUE "GreetingScene";
+@NPC "Shopkeeper";
+@LINES {
+    Greeting: "Welcome to my shop, traveler!";
+    AskAboutItems: "What are you looking for today?";
+    Goodbye: "Safe travels!";
+    ExplainSwords: "We have a fine selection of swords.";
+    ExplainPotions: "Our potions are the finest you'll find.";
+} ;
+
+@CHOICES {
+    Greeting: {
+        "Tell me about swords." -> ExplainSwords;
+        "Do you have potions?" -> ExplainPotions;
+        "Goodbye." -> Goodbye;
+    };
+    ExplainSwords: {
+        "What else do you have?" -> AskAboutItems;
+        "Goodbye." -> Goodbye;
+    };
+    ExplainPotions: {
+        "What else do you have?" -> AskAboutItems;
+        "Goodbye." -> Goodbye;
+    };
+    AskAboutItems: {
+        "Tell me about swords." -> ExplainSwords;
+        "Do you have potions?" -> ExplainPotions;
+        "Goodbye." -> Goodbye;
+    };
+} ;
+
+@INITIAL_LINE Greeting;

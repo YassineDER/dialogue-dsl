@@ -15,13 +15,13 @@
     // Choices follow this format: "From_Line_ID": [ "Choice Text" -> "Next_Line_ID", ... ];
     
     L1:{ 
-        "Just passing through." -> L2,
-        "Do you need help with anything?" -> "L5"
+        "Just passing through." -> L2 ;
+        "Do you need help with anything?" -> L5;
     };
-    "L5":{ 
-        "I'm happy to help." -> "L3",
-        "Not right now." -> "L4"
+    L5:{ 
+        "I'm happy to help." -> L3 ;
+        "Not right now." -> L4;
     };
 };
 
-@INITIAL_LINE "L1";
+@INITIAL_LINE L1;

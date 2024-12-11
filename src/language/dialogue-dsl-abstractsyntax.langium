@@ -7,7 +7,7 @@ interface DialogTree {
 }
 
 interface NPC_LINE {
-    id: string
+    name: string
     text: string
 }
 
