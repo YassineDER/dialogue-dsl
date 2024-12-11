@@ -8,7 +8,12 @@ interface DialogTree {
 interface NPC_LINE {
     id: string
     text: string
-    choices?: Choice[]
+    choiceDef: @ChoiceDefinition
+}
+
+interface ChoiceDefinition {
+    from_line: @NPC_LINE
+    choices: Choice[]
 }
 
 interface Choice {

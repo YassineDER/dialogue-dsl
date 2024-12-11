@@ -6,7 +6,7 @@ entry DialogRule:
     '@DIALOGUE' name=STRING ';'
     '@NPC' npc_name=STRING ';'
     '@LINES' '{' lines+=NpcLineRule+ '}' ';'
-    '@CHOICES' '{' choiceDefinitions+=ChoiceDefinition+ '}' ';'
+    '@CHOICES' '{' choiceDefs+=ChoiceDefinitionRule+ '}' ';'
     '@INITIAL_LINE' initial_line=[NPC_LINE:ID] ';'
 ;
 
@@ -14,7 +14,7 @@ NpcLineRule:
     id=ID ':' text=STRING ';'
 ;
 
-ChoiceDefinition:
+ChoiceDefinitionRule:
     from_line=[NPC_LINE:ID] ':' '{' choices+=ChoiceRule+ '}' ';'
 ;
 
