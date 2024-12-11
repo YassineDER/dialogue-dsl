@@ -5,7 +5,7 @@ import './dialogue-dsl-abstractsyntax'
 entry DialogRule returns DialogTree:
     '@DIALOGUE' name=STRING ';'
     '@NPC' npc_name=STRING ';'
-    '@LINES' '{' lines+=NpcLineRule+ '}'
+    '@LINES' '{' lines+=NpcLineRule+ '}' ';'
     '@CHOICES' '{' choiceDefs+=ChoiceDefinitionRule+ '}' ';'
     '@INITIAL_LINE' initial_line=[NPC_LINE:ID] ';'
 ;
