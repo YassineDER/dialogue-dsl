@@ -1,5 +1,4 @@
 grammar DialogueDsl
-
 import './dialogue-dsl-abstractsyntax'
 
 entry DialogRule returns DialogTree:

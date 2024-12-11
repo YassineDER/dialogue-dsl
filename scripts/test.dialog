@@ -1,26 +1,30 @@
 @DIALOGUE "diag1";
-@NPC "n1";
-
+@NPC "Dickard";
 @LINES {
-    // Line declarations follow this format: "Line_ID": "Dialogue Text";
-    
-    L1: "Welcome, traveler! What brings you to our village?";
-    L2: "I see. Stay as long as you need.";
-    L3: "Very well, if you need help, just ask.";
-    L4: "Safe travels, wanderer.";
-    L5: "Perhaps you would like to assist us with a task?";
+    L1: "Salut, aventurier. Tu n'as pas l'air d'être d'ici je me trompe?";
+
+    L2: "Ma mère ? Tu es sûr de toi ?";
+    L3: "Désolé, je ne voulais pas vous manquer de respect. Prenez ça comme une marque de confiance.";
+    // Le joueur recoit une patate douce dans son inventaire.
+
+    L4: "Il y a des chances, mais comment puis-je savoir que tu sais t'en servir ?";
+
+    L5: "Hahaha, tu m'as l'air d'avoir du cran. Je vais te donner une arme, mais ne fais pas de bêtises avec.";
+    // Le joueur recoit une AK-47 dans son inventaire.
 };
 
 @CHOICES {
-    // Choices follow this format: "From_Line_ID": [ "Choice Text" -> "Next_Line_ID", ... ];
-    
-    L1:{ 
-        "Just passing through." -> L2 ;
-        "Do you need help with anything?" -> L5;
+    L1: { 
+        "Si, je suis ta mère. t'as oublié ?" -> L2;
+        "On se tutoie depuis quand ?" -> L3;
     };
-    L5:{ 
-        "I'm happy to help." -> L3 ;
-        "Not right now." -> L4;
+    L2: { 
+        "Je suis sûr de rien, mais je suis sûr que tu vas aimer ça [anéantir Dickard]" -> L3;
+        "Je plaisante, je suis du village d'Assling. Trouverai-je des armes chez toi ?" -> L4;
+    };
+    L4: {
+        "Je suis Russe." -> L5;
+        "Donne-moi une et je te montrerai." -> L5;
     };
 };
 
