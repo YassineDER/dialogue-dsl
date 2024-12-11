@@ -2,23 +2,23 @@ grammar DialogueDsl
 
 import './dialogue-dsl-abstractsyntax'
 
-entry DialogRule:
+entry DialogRule returns DialogTree:
     '@DIALOGUE' name=STRING ';'
     '@NPC' npc_name=STRING ';'
-    '@LINES' '{' lines+=NpcLineRule+ '}' ';'
+    '@LINES' '{' lines+=NpcLineRule+ '}'
     '@CHOICES' '{' choiceDefs+=ChoiceDefinitionRule+ '}' ';'
     '@INITIAL_LINE' initial_line=[NPC_LINE:ID] ';'
 ;
 
-NpcLineRule:
+NpcLineRule returns NPC_LINE:
     id=ID ':' text=STRING ';'
 ;
 
-ChoiceDefinitionRule:
+ChoiceDefinitionRule returns ChoiceDefinition:
     from_line=[NPC_LINE:ID] ':' '{' choices+=ChoiceRule+ '}' ';'
 ;
 
-ChoiceRule:
+ChoiceRule returns Choice:
     text=STRING '->' next_line=[NPC_LINE:ID]
 ;
 

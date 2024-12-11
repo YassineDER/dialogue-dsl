@@ -3,12 +3,12 @@ interface DialogTree {
     npc_name: string
     lines: NPC_LINE[]
     initial_line: @NPC_LINE
+    choiceDefs: ChoiceDefinition[]
 }
 
 interface NPC_LINE {
     id: string
     text: string
-    choiceDef: @ChoiceDefinition
 }
 
 interface ChoiceDefinition {
