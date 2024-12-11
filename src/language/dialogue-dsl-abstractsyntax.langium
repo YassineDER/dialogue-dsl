@@ -8,7 +8,7 @@ interface DialogTree {
 interface NPC_LINE {
     id: string
     text: string
-    choices: Choice[]
+    choices?: Choice[]
 }
 
 interface Choice {

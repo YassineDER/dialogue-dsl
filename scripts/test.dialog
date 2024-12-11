@@ -1,7 +1,7 @@
 @DIALOGUE "diag1";
 @NPC "n1";
 
-@LINES [
+@LINES {
     // Line declarations follow this format: "Line_ID": "Dialogue Text";
     
     "L1": "Welcome, traveler! What brings you to our village?";
@@ -9,19 +9,19 @@
     "L3": "Very well, if you need help, just ask.";
     "L4": "Safe travels, wanderer.";
     "L5": "Perhaps you would like to assist us with a task?";
-];
+};
 
-@CHOICES [
+@CHOICES {
     // Choices follow this format: "From_Line_ID": [ "Choice Text" -> "Next_Line_ID", ... ];
     
-    "L1": [
+    "L1": {
         "Just passing through." -> "L2",
         "Do you need help with anything?" -> "L5"
-    ];
-    "L5": [
+    };
+    "L5": {
         "I'm happy to help." -> "L3",
         "Not right now." -> "L4"
-    ];
-];
+    };
+};
 
 @INITIAL_LINE "L1";

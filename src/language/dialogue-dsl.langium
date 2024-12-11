@@ -2,14 +2,25 @@ grammar DialogueDsl
 
 import './dialogue-dsl-abstractsyntax'
 
-entry DialogueRule returns DialogTree:
-    '@DIALOGUE' name = ID
-    '@NPC' npc_name = STRING
-    '@LINES' lines = 
+entry DialogRule:
+    '@DIALOGUE' name=STRING ';'
+    '@NPC' npc_name=STRING ';'
+    '@LINES' '{' lines+=NpcLineRule+ '}' ';'
+    '@CHOICES' '{' choiceDefinitions+=ChoiceDefinition+ '}' ';'
+    '@INITIAL_LINE' initial_line=[NpcLineRule] ';'
+;
 
+NpcLineRule:
+    id=ID ':' text=STRING ';'
+;
 
-entry LineRule returns NPC_LINE:
+ChoiceDefinition:
+    from_line=[NpcLineRule] ':' '{' choices+=ChoiceRule+ '}' ';'
+;
 
+ChoiceRule:
+    text=STRING '->' next_line=[NpcLineRule]
+;
 
 
 hidden terminal WS: /\s+/;
