@@ -14,11 +14,11 @@
 @CHOICES {
     // Choices follow this format: "From_Line_ID": [ "Choice Text" -> "Next_Line_ID", ... ];
     
-    "L1": {
+    "L1":{ 
         "Just passing through." -> "L2",
         "Do you need help with anything?" -> "L5"
     };
-    "L5": {
+    "L5":{ 
         "I'm happy to help." -> "L3",
         "Not right now." -> "L4"
     };
