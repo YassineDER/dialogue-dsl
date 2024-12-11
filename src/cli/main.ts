@@ -1,11 +1,11 @@
-import type { DialogRule } from '../language/generated/ast.js';
-import chalk from 'chalk';
+// import type { DialogRule } from '../language/generated/ast.js';
+// import chalk from 'chalk';
 import { Command } from 'commander';
 import { DialogueDslLanguageMetaData } from '../language/generated/module.js';
-import { createDialogueDslServices } from '../language/dialogue-dsl-module.js';
-import { extractAstNode } from './cli-util.js';
-import { generateJavaScript } from './generator.js';
-import { NodeFileSystem } from 'langium/node';
+// import { createDialogueDslServices } from '../language/dialogue-dsl-module.js';
+// import { extractAstNode } from './cli-util.js';
+// import { generateJavaScript } from './generator.js';
+// import { NodeFileSystem } from 'langium/node';
 import * as url from 'node:url';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
@@ -15,10 +15,10 @@ const packagePath = path.resolve(__dirname, '..', '..', 'package.json');
 const packageContent = await fs.readFile(packagePath, 'utf-8');
 
 export const generateAction = async (fileName: string, opts: GenerateOptions): Promise<void> => {
-    const services = createDialogueDslServices(NodeFileSystem).DialogueDsl;
-    const model = await extractAstNode<DialogRule>(fileName, services);
-    const generatedFilePath = generateJavaScript(model, fileName, opts.destination);
-    console.log(chalk.green(`JavaScript code generated successfully: ${generatedFilePath}`));
+    // const services = createDialogueDslServices(NodeFileSystem).DialogueDsl;
+    // const model = await extractAstNode<DialogRule>(fileName, services);
+    // const generatedFilePath = generateJavaScript(model, fileName, opts.destination);
+    // console.log(chalk.green(`JavaScript code generated successfully: ${generatedFilePath}`));
 };
 
 export type GenerateOptions = {
