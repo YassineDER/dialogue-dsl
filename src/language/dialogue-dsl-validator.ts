@@ -1,4 +1,4 @@
-import type {  ValidationChecks } from 'langium';
+import type { ValidationChecks } from 'langium';
 import type { DialogueDslAstType } from './generated/ast.js';
 import type { DialogueDslServices } from './dialogue-dsl-module.js';
 
