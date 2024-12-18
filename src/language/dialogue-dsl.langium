@@ -9,6 +9,7 @@ entry DialogRule returns DialogTree:
     '@INITIAL_LINE' initial_line = [NPC_LINE:ID] ';'
 ;
 
+
 NpcLineRule returns NPC_LINE:
     name=ID ':' text=STRING ';'
 ;
